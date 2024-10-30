@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 ###############手动修改##############
-name: JDCloud-AX6000-Baili-hanwckf
+name: JDCloud-AX6000-1Baili1
 
 on:
   repository_dispatch:
@@ -54,7 +54,7 @@ on:
 env:
   ###############手动修改##############
   OPENWRT_NAME: hanwckf
-  REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
+  REPO_URL: https://github.com/673271913/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: JDCloud-AX6000-Baili-hanwckf/feeds.conf.default
   CONFIG_FILE: JDCloud-AX6000-Baili-hanwckf/.mtwifi-cfg.config
