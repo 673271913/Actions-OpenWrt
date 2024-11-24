@@ -66,10 +66,10 @@ env:
   OPENWRT_NAME: hanwckf
   REPO_URL: https://github.com/673271913/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
-  FEEDS_CONF: ax6000/feeds.conf.default
-  CONFIG_FILE: ax6000/.mtwifi-cfg.config
-  DIY_P1_SH: ax6000/diy-part1.sh
-  DIY_P2_SH: ax6000/diy-part2.sh
+  FEEDS_CONF: AX6000/feeds.conf.default
+  CONFIG_FILE: Ax6000/.mtwifi-cfg.config
+  DIY_P1_SH: AX6000/diy-part1.sh
+  DIY_P2_SH: AX6000/diy-part2.sh
   SSH_ACTIONS: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
