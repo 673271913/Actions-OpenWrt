@@ -67,7 +67,7 @@ env:
   REPO_URL: https://github.com/673271913/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: AX6000/feeds.conf.default
-  CONFIG_FILE: AX6000/.mtwifi-cfg.config
+  CONFIG_FILE: AX6000/.ssh-7975.config
   DIY_P1_SH: AX6000/diy-part1.sh
   DIY_P2_SH: AX6000/diy-part2.sh
   SSH_ACTIONS: false
