@@ -65,7 +65,7 @@ env:
   ##因为是两个设备，所以手动设置上传时候的打包名称和tag名称UPLOAD_TAG_NAME
   OPENWRT_NAME: hanwckf
   UPLOAD_TAG_NAME: text-zbt-dsa
-  REPO_URL: https://github.com/banma/immortalwrt-mt798x
+  REPO_URL: https://github.com/673271913/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: text-zbt-dsa/feeds.conf.default
   CONFIG_FILE: text-zbt-dsa/.mtwifi-cfg.config
