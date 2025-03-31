@@ -69,7 +69,7 @@ env:
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: PHILIPS_HY3000-hanwckf/feeds.conf.default
   PHILIPS_HY3000_DTS_FILE: target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-philips-hy3000.dts
-  CONFIG_FILE: PHILIPS_HY3000-24.10/.mtwifi-cfg.config
+  CONFIG_FILE: PHILIPS_HY3000-hanwckf/.mtwifi-cfg.config
   DIY_P1_SH: PHILIPS_HY3000-hanwckf/diy-part1.sh
   DIY_P2_SH: PHILIPS_HY3000-hanwckf/diy-part2.sh
   SSH_ACTIONS: false
