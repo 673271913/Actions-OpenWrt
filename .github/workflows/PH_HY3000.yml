@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 ###############手动修改##############
-name: PHILIPS_HY3000-24.10
+name: PH_HY3000
 
 on:
   repository_dispatch:
@@ -64,12 +64,12 @@ env:
   ###############手动修改##############
   ##因为是两个设备，所以手动设置上传时候的打包名称和tag名称UPLOAD_TAG_NAME
   OPENWRT_NAME: hanwckf
-  UPLOAD_TAG_NAME: philips_hy3000
-  REPO_URL: https://github.com/kuxiaopa/immortalwrt-mt798x-24.10
+  UPLOAD_TAG_NAME: ph_hy3000
+  REPO_URL: https://github.com/673271913/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: PHILIPS_HY3000-hanwckf/feeds.conf.default
-  PHILIPS_HY3000_DTS_FILE: target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-philips-hy3000.dts
-  CONFIG_FILE: PHILIPS_HY3000-hanwckf/.mtwifi-cfg.config
+  PH_HY3000_DTS_FILE: target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-ph-hy3000.dts
+  CONFIG_FILE: PH_HY3000/.mtwifi-cfg.config
   DIY_P1_SH: PHILIPS_HY3000-hanwckf/diy-part1.sh
   DIY_P2_SH: PHILIPS_HY3000-hanwckf/diy-part2.sh
   SSH_ACTIONS: false
@@ -143,11 +143,11 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: 设置PHILIPS_HY3000的eMMC使用highspeed
+    - name: 设置PH_HY3000的eMMC使用highspeed
       run: |
         cd openwrt
-        if ! grep -q 'cap-mmc-highspeed' "${{ env.PHILIPS_HY3000_DTS_FILE }}"; then
-                sed -i -e '/bus-width = <8>;/ a\	cap-mmc-highspeed;' "${{ env.PHILIPS_HY3000_DTS_FILE }}"
+        if ! grep -q 'cap-mmc-highspeed' "${{ env.PH_HY3000_DTS_FILE }}"; then
+                sed -i -e '/bus-width = <8>;/ a\	cap-mmc-highspeed;' "${{ env.PH_HY3000_DTS_FILE }}"
         fi
 
     - name: 设置LAN IP地址（路由器登录地址）
@@ -195,7 +195,7 @@ jobs:
         \t\tlocal wifi1_mac=\"\$(macaddr_setbit_la \$wifi0_mac)\"
         \t\tsed -i \"/^MacAddress=.*/ {s/.*/MacAddress=\$wifi1_mac/;b;}; \\\$aMacAddress=\$wifi1_mac\" /etc/wireless/mediatek/mt7981.dbdc.b1.dat" > temp_insert.txt
         ## 将文本内容写入02_network
-        sed -i '/mediatek_setup_macs()/,/\};/ {/philips,hy3000)/ {n;n;n;r temp_insert.txt
+        sed -i '/mediatek_setup_macs()/,/\};/ {/ph,hy3000)/ {n;n;n;r temp_insert.txt
         }}' target/linux/mediatek/mt7981/base-files/etc/board.d/02_network
 
     - name: 使用luci-app-mtk无线配置
